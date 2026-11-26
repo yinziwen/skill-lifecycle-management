@@ -9,8 +9,6 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Development](https://img.shields.io/badge/development-SDD-orange)
 [![Downloads](https://img.shields.io/github/downloads/yinziwen/skill-lifecycle-management/total)](https://github.com/yinziwen/skill-lifecycle-management/releases)
-[![Stars](https://img.shields.io/github/stars/yinziwen/skill-lifecycle-management)](https://github.com/yinziwen/skill-lifecycle-management/stargazers)
-[![Forks](https://img.shields.io/github/forks/yinziwen/skill-lifecycle-management)](https://github.com/yinziwen/skill-lifecycle-management/forks)
 [![Issues](https://img.shields.io/github/issues/yinziwen/skill-lifecycle-management)](https://github.com/yinziwen/skill-lifecycle-management/issues)
 
 ## Overview
