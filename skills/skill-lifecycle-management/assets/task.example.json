@@ -1,0 +1,1 @@
+{"task_id":"example-001","project_id":"demo","source":"synthetic-example","summary":"示例：只修改目标模块","goal_key":"prevent-unrelated-change","operation_key":"modify-code","output_key":"verified-patch","workflow":["locate","analyze","edit","diff","test"],"constraints":["preserve-other-behavior"],"category":"skill","status":"unknown","verified":false,"evidence":[]}

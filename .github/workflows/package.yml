@@ -1,0 +1,45 @@
+name: Build release candidates
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s skills/skill-lifecycle-management/tests -v
+  package:
+    needs: regression
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Build tag artifacts
+        if: github.ref_type == 'tag'
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python tools/package.py --tag "$RELEASE_TAG"
+      - name: Build manual artifacts
+        if: github.ref_type != 'tag'
+        run: python tools/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slm-release-candidates
+          path: dist/
+          if-no-files-found: error

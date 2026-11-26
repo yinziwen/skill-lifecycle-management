@@ -1,0 +1,67 @@
+SLM v0.2.1 — actual regression results
+Environment: Python 3.13.5
+
+Original v0.2.0 baseline: 29 tests passed.
+D8 reproduced: session change rejected as finalized task.
+D9 reproduced: missing dependencies accepted into pending optimization.
+
+test_approved_generation_export (test_slm.LifecycleTests.test_approved_generation_export) ... ok
+test_different_constraint (test_slm.LifecycleTests.test_different_constraint) ... ok
+test_different_project (test_slm.LifecycleTests.test_different_project) ... ok
+test_external_duplicate (test_slm.LifecycleTests.test_external_duplicate) ... ok
+test_external_duplicate_after_proposal (test_slm.LifecycleTests.test_external_duplicate_after_proposal) ... ok
+test_failed_not_success (test_slm.LifecycleTests.test_failed_not_success) ... ok
+test_feedback_optimize_rollback (test_slm.LifecycleTests.test_feedback_optimize_rollback) ... ok
+test_invalid_slug (test_slm.LifecycleTests.test_invalid_slug) ... ok
+test_opposite_goal (test_slm.LifecycleTests.test_opposite_goal) ... ok
+test_reopen (test_slm.LifecycleTests.test_reopen) ... ok
+test_requires_approval (test_slm.LifecycleTests.test_requires_approval) ... ok
+test_rule_not_skill (test_slm.LifecycleTests.test_rule_not_skill) ... ok
+test_same_task_dedup (test_slm.LifecycleTests.test_same_task_dedup) ... ok
+test_stale_approval (test_slm.LifecycleTests.test_stale_approval) ... ok
+test_synonym_canonical_match (test_slm.LifecycleTests.test_synonym_canonical_match) ... ok
+test_cross_private_never_matches (test_v020.ActiveDiscoveryTests.test_cross_private_never_matches) ... ok
+test_cross_process_cli_utf8 (test_v020.ActiveDiscoveryTests.test_cross_process_cli_utf8) ... ok
+test_cross_project_requires_explicit_scope_and_flag (test_v020.ActiveDiscoveryTests.test_cross_project_requires_explicit_scope_and_flag) ... ok
+test_default_three_and_observe (test_v020.ActiveDiscoveryTests.test_default_three_and_observe) ... ok
+test_dependencies_and_feedback_errors (test_v020.ActiveDiscoveryTests.test_dependencies_and_feedback_errors) ... ok
+test_high_value_requires_evidence (test_v020.ActiveDiscoveryTests.test_high_value_requires_evidence) ... ok
+test_ignore_persistent (test_v020.ActiveDiscoveryTests.test_ignore_persistent) ... ok
+test_legacy_deps_unknown (test_v020.ActiveDiscoveryTests.test_legacy_deps_unknown) ... ok
+test_new_proposal_requires_dependency_declaration (test_v020.ActiveDiscoveryTests.test_new_proposal_requires_dependency_declaration) ... ok
+test_reject_and_pending_suppress (test_v020.ActiveDiscoveryTests.test_reject_and_pending_suppress) ... ok
+test_reuse_and_optimize (test_v020.ActiveDiscoveryTests.test_reuse_and_optimize) ... ok
+test_shown_cooldown_new_evidence (test_v020.ActiveDiscoveryTests.test_shown_cooldown_new_evidence) ... ok
+test_single_high_not_enough (test_v020.ActiveDiscoveryTests.test_single_high_not_enough) ... ok
+test_two_high_value (test_v020.ActiveDiscoveryTests.test_two_high_value) ... ok
+test_bad_declarations (test_v021.FixTests.test_bad_declarations) ... ok
+test_changed_task_content_still_rejected (test_v021.FixTests.test_changed_task_content_still_rejected) ... ok
+test_explicit_empty_opt_dependencies (test_v021.FixTests.test_explicit_empty_opt_dependencies) ... ok
+test_legacy_create_route_no_bypass (test_v021.FixTests.test_legacy_create_route_no_bypass) ... ok
+test_legacy_pending_requires_fresh_proposal (test_v021.FixTests.test_legacy_pending_requires_fresh_proposal) ... ok
+test_migration_legacy_schema (test_v021.FixTests.test_migration_legacy_schema) ... ok
+test_session_absent_then_present (test_v021.FixTests.test_session_absent_then_present) ... ok
+test_t30_switch_session (test_v021.FixTests.test_t30_switch_session) ... ok
+test_t31_three_sessions_one_task (test_v021.FixTests.test_t31_three_sessions_one_task) ... ok
+test_t32_three_distinct_tasks (test_v021.FixTests.test_t32_three_distinct_tasks) ... ok
+test_t33_concurrent_cli (test_v021.FixTests.test_t33_concurrent_cli) ... ok
+test_t34_project_isolation (test_v021.FixTests.test_t34_project_isolation) ... ok
+test_t35_missing_opt_dependencies (test_v021.FixTests.test_t35_missing_opt_dependencies) ... ok
+test_t36_explicit_same_dependencies (test_v021.FixTests.test_t36_explicit_same_dependencies) ... ok
+test_t37_missing_runtime_dependency_draft_only (test_v021.FixTests.test_t37_missing_runtime_dependency_draft_only) ... ok
+test_t38_tamper_after_approval (test_v021.FixTests.test_t38_tamper_after_approval) ... ok
+test_t39_legacy_approved_invalid_draft_transaction_rollback (test_v021.FixTests.test_t39_legacy_approved_invalid_draft_transaction_rollback) ... ok
+test_tamper_before_approval (test_v021.FixTests.test_tamper_before_approval) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 7.973s
+
+OK
+
+Actual v0.2.0 record: {'status': 'recorded', 'task_id': 'legacy1'}
+Migration: {'project_id': 'demo', 'task_id': 'legacy1', 'session_ids': ['old']}
+Replay: {'status': 'duplicate', 'task_id': 'legacy1', 'session_linked': True}
+Sessions: {'project_id': 'demo', 'task_id': 'legacy1', 'session_ids': ['new', 'old']}
+Actual prior-version database migration: PASS
+
+Scope: synthetic core/CLI tests. Old tests adjusted for strict dependency contract; historical unknown dependencies test preserved using legacy fixture. T37 verifies missing dependency is flagged and only local unverified draft registered; core has no publish API. No TeleAgent/TRAE real host validation.

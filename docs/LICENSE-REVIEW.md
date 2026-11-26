@@ -1,0 +1,7 @@
+# License and provenance review / 许可与来源审查
+
+- Original v0.2.1 source ZIP contains no LICENSE or package dependency manifest. Core and tests import Python standard-library modules only. There is no bundled Python runtime, third-party SDK, model, TeleAgent code, or Skills CLI executable in the inspected archive.
+- Python and SQLite are runtime prerequisites, not redistributed by this project. See https://docs.python.org/3/license.html and https://www.sqlite.org/copyright.html. The optional Skills CLI is an external installer (https://github.com/vercel-labs/skills); its code is not bundled. GitHub Actions invokes external official actions; it does not vendor them into the skill.
+- Generated skills can declare their own optional runtime dependencies; those dependencies are not supplied or licensed by SLM. Each generated skill needs its own review.
+- No third-party code provenance or employment/IP ownership can be conclusively established from the archive alone. Check the origin of any copied code, employer rules, and rights to distribute AI-assisted outputs before release. A pattern scan does not establish copyright ownership.
+- Proposed MIT terms are provided in `MIT-LICENSE-TEMPLATE.txt` for review only. If you have the rights and choose MIT, replace the copyright placeholder with the actual rights holder, remove the template warning, save as repository-root `LICENSE`, and update both README license sections. Keep any third-party notices that are required. Until then keep the repository private and do not distribute it publicly.

@@ -1,0 +1,39 @@
+{
+  "project_id": "demo",
+  "task_ids": [
+    "example-001",
+    "example-002",
+    "example-003"
+  ],
+  "rationale": "示例：必须替换为真实且已验证的独立任务证据",
+  "draft": {
+    "name": "minimal-change",
+    "description": "控制代码变更范围，避免修改无关代码。",
+    "goal": "避免非预期变更",
+    "trigger": "用户请求修改存量代码",
+    "non_triggers": [
+      "只咨询概念",
+      "用户要求整体重构"
+    ],
+    "inputs": [
+      "明确的需求",
+      "授权的目标模块"
+    ],
+    "steps": [
+      "定位必要文件",
+      "分析影响范围",
+      "实施修改",
+      "检查 Git Diff",
+      "运行相关测试"
+    ],
+    "constraints": [
+      "不修改无关代码",
+      "尊重用户授权"
+    ],
+    "acceptance": [
+      "需求通过验收",
+      "不存在越界修改"
+    ],
+    "dependencies": []
+  }
+}
