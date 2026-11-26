@@ -8,6 +8,8 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Development](https://img.shields.io/badge/development-SDD-orange)
+[![Downloads](https://img.shields.io/github/downloads/yinziwen/skill-lifecycle-management/total)](https://github.com/yinziwen/skill-lifecycle-management/releases)
+[![Issues](https://img.shields.io/github/issues/yinziwen/skill-lifecycle-management)](https://github.com/yinziwen/skill-lifecycle-management/issues)
 
 ## 项目简介
 
