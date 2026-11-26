@@ -8,7 +8,7 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Development](https://img.shields.io/badge/development-SDD-orange)
-[![skills.sh](https://skills.sh/b/yinziwen/skill-lifecycle-management)](https://skills.sh/yinziwen/skill-lifecycle-management)
+![skills.sh](https://skills.sh/b/yinziwen/skill-lifecycle-management)](https://skills.sh/yinziwen/skill-lifecycle-management)
 
 ## Overview
 
